@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://by77txfbi5xw7"]
+
+[ext_resource type="Script" uid="uid://hqrnyys3hb1l" path="res://scripts/coin.gd" id="1_0t63x"]
+[ext_resource type="Texture2D" uid="uid://gm718cpxkjnj" path="res://heart.png" id="1_d5gmh"]
+[ext_resource type="PackedScene" uid="uid://rxvelkocs6a5" path="res://scripts/coin_ui.tscn" id="3_v7riw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0t63x"]
+radius = 8.062258
+
+[node name="Coin" type="Node2D"]
+script = ExtResource("1_0t63x")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(11, 12)
+shape = SubResource("CircleShape2D_0t63x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(11, 10.000001)
+scale = Vector2(4.1, 3.9)
+texture = ExtResource("1_d5gmh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="CoinUI" parent="CanvasLayer" instance=ExtResource("3_v7riw")]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

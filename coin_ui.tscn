@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://rxvelkocs6a5"]
+
+[ext_resource type="Script" uid="uid://nxle5140epom" path="res://scripts/coin_ui.gd" id="1_bau45"]
+[ext_resource type="Texture2D" uid="uid://gm718cpxkjnj" path="res://heart.png" id="1_oer0h"]
+
+[sub_resource type="GDScript" id="GDScript_kma2f"]
+
+[node name="CoinUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_bau45")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_oer0h")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 1.0
+offset_right = 66.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 30
+text = "0
+"
+script = SubResource("GDScript_kma2f")
